@@ -15,11 +15,11 @@ public class SavingsAccount extends BankAccount {
         this.interestRate = interestRate;
     }
     public void applyInterest() {
-        // 2. Student Task: Implement interest application logic here
-        double interest = balance * interestRate;
+    // Use the getter method
+    double interest = getBalance() * interestRate;
 
-        // Reuse deposit logic (validates and updates balance)
-        this.deposit(interest);
+    // Reuse deposit logic
+    this.deposit(interest);
     }
 
   // 3. Student Task: Create getter for interestRate here
