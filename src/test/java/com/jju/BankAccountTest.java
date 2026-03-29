@@ -1,4 +1,4 @@
-package com.jju;
+package edu.jju_iot;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
