@@ -37,7 +37,7 @@ public class App {
 
         System.out.println("Processing all accounts in the system:");
         for (BankAccount acc : accounts) {
-            System.out.println("Account Holder: " + acc.getaccountHolder() + 
+            System.out.println("Account Holder: " + acc.getAccountHolder() + 
                                " | Balance: $" + acc.getBalance());
         }
     }
