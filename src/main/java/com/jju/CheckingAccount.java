@@ -1,29 +1,27 @@
-
 package com.jju;
 
 public class CheckingAccount extends BankAccount {
     private static final double TRANSACTION_FEE = 1.50;
 
-  // 1. Student Task: Create constructor and call the superclass constructor and ensure balance is valid
-        public CheckingAccount(String accountHolder, double initialBalance) {
-        super(accountHolder, initialBalance); // calls BankAccount constructor
-        }
+    public CheckingAccount(String accountHolder, double initialBalance) {
+        // Student Task: Call the superclass constructor and ensure balance is valid
+        super(accountHolder, initialBalance);
+    }
+
+    // @Override
+    // public void withdraw(double amount) {
+    //     // Student Task: Implement withdrawal logic that includes the transaction fee
+    //     super.withdraw(amount);
+    //     super.withdraw(TRANSACTION_FEE);
+    // }
+
     @Override
     public void withdraw(double amount) {
-       // 2. Student Task: Implement withdraw logic here
-               if (amount <= 0) {
-            throw new IllegalArgumentException("Withdrawal amount must be positive.");
-        }
-
         double totalAmount = amount + TRANSACTION_FEE;
-
-        // Check if balance can cover both amount and fee
-        if (totalAmount > balance) {
-            throw new IllegalStateException("Insufficient balance (including transaction fee).");
+        if (amount > 0 && balance >= totalAmount) {
+            // Using super.withdraw(totalAmount) is the cleanest way to reuse parent logic
+            super.withdraw(totalAmount);
         }
-
-        // Reuse parent logic
-        super.withdraw(totalAmount);
     }
 
     
