@@ -40,7 +40,7 @@ public class BankAccount {
 
     }
 
-    public double getBalance() {
+    public double getbalance() {
         return balance;
     }
     public String getaccountHolder(){
